@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +86,7 @@
     </div>
 
     <script>
-        // BACKEND GOOGLE APPS SCRIPT ENDPOINT
+        // BACKEND ENDPOINT
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pFxKq1w-8_lHsrKqnfAUdZ508TjPAJWy9PQMJhAEqdzPNY0lllO4a54yCHTk3HYh/exec";
 
         const bootSequence = [
@@ -97,14 +96,15 @@
             "[ OK ] Initializing core group components... ",
             "[ OK ] Allocating mask 0x2000 for lifetime_mem...",
             "[ OK ] Bypassing endianness checks... Cache aligned.",
+            "[ OK ] Storing couple in Non-Volatile Cache... Lifetime retention active.",
             "[ OK ] Verifying Ring Buffer... 💍 lock engaged.",
             "Flashing lifetime firmware... [||||||||||||||||||] 100%",
             "[INFO] Compiling union: Sidhant && Ishita",
             "",
             ">>> SYSTEM ALERT: Major Event Executing <<<",
             "Event_Type: Wedding",
-            "Target_Date: 10-Dec-2026",
-            "Location_Protocol: Ranchi_Coordinates.cfg",
+            "Target_Date: 04-Dec-2026",
+            "Location_Protocol: Radisson_Blu_Ranchi_Coordinates.cfg",
             "",
             "Awaiting User Input for Event Confirmation...",
             "RSVP_Status (Click an option): "
@@ -172,7 +172,7 @@
             }
 
             document.getElementById("namePrompt").style.display = "none";
-            terminal.innerHTML += "Transmitting payload to Google Sheet backend... ";
+            terminal.innerHTML += "Adding you to the DMA queue... ";
 
             const payload = {
                 name: nameInput,
@@ -187,14 +187,14 @@
             })
             .then(() => {
                 if (selectedStatus === "Accepted") {
-                    terminal.innerHTML += "\n\n[ OK ] Response written to remote Google Sheet database.\n[ OK ] Guest locked in for Ranchi! See you there 🎉";
+                    terminal.innerHTML += "\n\n[ OK ] Added to DMA queue!\n[ OK ] See you at Radisson Blu, Ranchi on Dec 4th 🎉";
                 } else {
-                    terminal.innerHTML += "\n\n[ OK ] Status updated in Google Sheet.\n[WARN] Connection closed. We will miss you!";
+                    terminal.innerHTML += "\n\n[ OK ] Added to DMA queue.\n[WARN] Connection closed. We will miss you!";
                 }
                 document.getElementById("cursor").style.display = "none";
             })
             .catch(err => {
-                terminal.innerHTML += "\n[ERR] Sync failed. Please check network connection.";
+                terminal.innerHTML += "\n[ERR] Transfer timeout. Please try again.";
             });
         }
 
